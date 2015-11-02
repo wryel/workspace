@@ -1,0 +1,60 @@
+*, *:before, *:after {
+	font-size: 13px !important;	
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+body {
+	background: #e5e5e5;
+}
+
+/* uso geral */
+
+.dezPorCento {
+	width: 10%;
+}
+
+.vintePorCento {
+	width: 20%;
+}
+
+.cemPorCento {
+	width: 100%;
+}
+
+.vinteCincoPorCento {
+	width: 25%;
+}
+
+.setentaECincoPorCento {
+	width: 75%;
+}
+
+.cinquentaPorCento {
+	width: 50%;
+}
+
+.alinharDireita {
+	text-align: right !important;
+}
+
+.alinharEsquerda {
+	text-align: left !important;
+}
+
+.alinharCentro {
+	text-align: center !important;
+}
+
+.negrito {
+	font-weight: bold;
+}
+
+.verticalTopo {
+	vertical-align: top;
+}
+
+.botao {
+	margin: 2px;
+}

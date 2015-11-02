@@ -1,0 +1,92 @@
+<html
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:core="http://faces.experian.com/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">	
+	
+	<p:panel>		
+		<f:facet name="header">
+			<h:outputText value="#{msg['logradouro']}" />
+		</f:facet>
+				
+		<p:dataTable value="#{logradouroController.logradouroListagemView.logradouros}" var="logradouro" emptyMessage="#{msg['vazio']}">			
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="#{msg['id']}" styleClass="negrito" />
+				</f:facet>
+				<h:outputText value="#{logradouro.id}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="#{msg['logradouro.rua']}" styleClass="negrito" />
+				</f:facet>
+				<h:outputText value="#{logradouro.rua}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="#{msg['logradouro.numero']}" styleClass="negrito" />
+				</f:facet>
+				<h:outputText value="#{logradouro.numero}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="#{msg['logradouro.complemento']}" styleClass="negrito" />
+				</f:facet>
+				<h:outputText value="#{logradouro.complemento}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="#{msg['logradouro.bairro']}" styleClass="negrito" />
+				</f:facet>
+				<h:outputText value="#{logradouro.bairro}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="#{msg['logradouro.cep']}" styleClass="negrito" />
+				</f:facet>
+				<h:outputText value="#{logradouro.cep}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="#{msg['logradouro.cidade']}" styleClass="negrito" />
+				</f:facet>
+				<h:outputText value="#{logradouro.cidade}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="#{msg['logradouro.estado']}" styleClass="negrito" />
+				</f:facet>
+				<h:outputText value="#{logradouro.estado}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="#{msg['acoes']}" styleClass="negrito" />
+				</f:facet>
+				<h:panelGroup styleClass="cemPorCento alinharCentro">
+					<h:form>
+						<p:commandButton action="#{logradouroController.actionRemover}" icon="ui-icon-trash" ajax="false">
+							<f:setPropertyActionListener target="#{logradouroController.logradouroEntradaView.logradouro}" value="#{logradouro}" />
+						</p:commandButton>
+						<p:commandButton action="#{logradouroController.actionEditar}" icon="ui-icon-pencil" ajax="false">
+							<f:setPropertyActionListener target="#{logradouroController.logradouroEntradaView.logradouro}" value="#{logradouro}" />
+						</p:commandButton>
+					</h:form>
+				</h:panelGroup>
+			</p:column>
+		</p:dataTable>
+				
+		<f:facet name="footer">
+			<h:panelGroup styleClass="cemPorCento alinharDireita">
+				<h:form>
+					<p:commandButton value="#{msg['novo']}" action="#{logradouroController.actionAdicionar}" icon="ui-icon-plus" ajax="false" />
+					<p:commandButton value="#{msg['listar']}" action="#{logradouroController.actionListar}" icon="ui-icon-search" ajax="false" />
+				</h:form>
+			</h:panelGroup>
+		</f:facet>		
+	</p:panel>
+	
+</html>

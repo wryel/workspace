@@ -1,0 +1,44 @@
+<html
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:core="http://faces.experian.com/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">	
+	<h:form>
+		<p:panel>		
+			<f:facet name="header">
+				<h:outputText value="#{msg['logradouro']}" />
+			</f:facet>
+			
+			<p:panelGrid columns="2" styleClass="cemPorCento">
+				<h:outputText value="#{msg['id']}:" styleClass="negrito" rendered="#{logradouroController.action == 'editar'}" />
+				<h:outputText value="#{logradouroController.logradouroEntradaView.logradouro.id}" styleClass="cinquentaPorCento" rendered="#{logradouroController.action == 'editar'}" />
+				<h:outputText value="#{msg['logradouro.rua']}:" styleClass="negrito" />
+				<h:inputText value="#{logradouroController.logradouroEntradaView.logradouro.rua}" styleClass="cinquentaPorCento" />
+				<h:outputText value="#{msg['logradouro.numero']}:" styleClass="negrito" />
+				<h:inputText value="#{logradouroController.logradouroEntradaView.logradouro.numero}" styleClass="cinquentaPorCento" />
+				<h:outputText value="#{msg['logradouro.complemento']}:" styleClass="negrito" />
+				<h:inputText value="#{logradouroController.logradouroEntradaView.logradouro.complemento}" styleClass="cinquentaPorCento" />
+				<h:outputText value="#{msg['logradouro.bairro']}:" styleClass="negrito" />
+				<h:inputText value="#{logradouroController.logradouroEntradaView.logradouro.bairro}" styleClass="cinquentaPorCento" />
+				<h:outputText value="#{msg['logradouro.cep']}:" styleClass="negrito" />
+				<h:inputText value="#{logradouroController.logradouroEntradaView.logradouro.cep}" styleClass="cinquentaPorCento" maxlength="8" />
+				<h:outputText value="#{msg['logradouro.cidade']}:" styleClass="negrito" />
+				<h:inputText value="#{logradouroController.logradouroEntradaView.logradouro.cidade}" styleClass="cinquentaPorCento" />
+				<h:outputText value="#{msg['logradouro.estado']}:" styleClass="negrito" />
+				<h:inputText value="#{logradouroController.logradouroEntradaView.logradouro.estado}" styleClass="cinquentaPorCento" maxlength="2" />
+			</p:panelGrid>
+							
+			<f:facet name="footer">
+				<h:panelGroup styleClass="cemPorCento alinharDireita" layout="block">
+					<p:commandButton value="#{msg['voltar']}" action="#{logradouroController.actionListar}" icon="ui-icon-arrowthick-1-w" ajax="false" />
+					<p:commandButton value="#{msg['novo']}" action="#{logradouroController.actionSalvarAdicionar}" icon="ui-icon-disk" ajax="false" rendered="#{logradouroController.action == 'adicionar'}" />
+					<p:commandButton value="#{msg['editar']}" action="#{logradouroController.actionSalvarEditar}" icon="ui-icon-pencil" ajax="false" rendered="#{logradouroController.action == 'editar'}" />
+				</h:panelGroup>
+			</f:facet>		
+		</p:panel>
+	</h:form>
+</html>
