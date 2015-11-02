@@ -1,14 +1,21 @@
 package com.hackerrank.cepservice.ws.client;
 
 import javax.ws.rs.client.ClientBuilder;
-import javax.ws.rs.client.WebTarget;
 
 import org.apache.commons.lang3.builder.Builder;
 import org.jboss.resteasy.client.jaxrs.ResteasyWebTarget;
 
-class LogradouroWSClientBuilder implements Builder<LogradouroWSClient> {
+import com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider;
 
-    private WebTarget webTarget;
+class LogradouroWSClientBuilder implements Builder<LogradouroWSClient> {
+    
+    private static final ClientBuilder CLIENT_BUILDER = ClientBuilder.newBuilder();
+    
+    static {
+        CLIENT_BUILDER.register(JacksonJsonProvider.class);
+    }
+    
+    private String baseUrl;
 
     public static LogradouroWSClientBuilder newInstance() {
         return new LogradouroWSClientBuilder();
@@ -16,11 +23,11 @@ class LogradouroWSClientBuilder implements Builder<LogradouroWSClient> {
 
     @Override
     public LogradouroWSClient build() {
-        return ((ResteasyWebTarget) webTarget).proxy(LogradouroWSClient.class);
+        return ((ResteasyWebTarget) CLIENT_BUILDER.build().target(baseUrl)).proxy(LogradouroWSClient.class);      
     }
 
-    public LogradouroWSClientBuilder setBaseUrl(String url) {
-        webTarget = ClientBuilder.newBuilder().build().register(com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider.class).target(url);
+    public LogradouroWSClientBuilder setBaseUrl(String baseUrl) {
+        this.baseUrl = baseUrl;
         return this;
     }
 }
