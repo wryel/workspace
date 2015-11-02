@@ -85,6 +85,7 @@
 	    <url-pattern>*.xhtml</url-pattern>  
 	</filter-mapping>
 	
+	<!-- removido, não temos dados lazy para serem mostrados 
 	<filter>
 		<filter-name>openEntityManagerInViewFilter</filter-name>
 		<filter-class>org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter</filter-class>
@@ -94,5 +95,5 @@
 	    <filter-name>openEntityManagerInViewFilter</filter-name>
 	    <url-pattern>*.xhtml</url-pattern>
 	</filter-mapping>
-	
+	-->
 </web-app>
