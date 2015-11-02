@@ -25,6 +25,7 @@ buildNumber.properties
 
 #eclipse
 
+.settings/
 .project
 .externalToolBuilders/
 *.launch
