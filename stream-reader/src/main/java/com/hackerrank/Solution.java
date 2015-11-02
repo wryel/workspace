@@ -10,6 +10,11 @@ public final class Solution {
         
     }
     
+    /**
+     * Encontra o primeiro caracter que no se repita no resto da stream
+     * @param stream
+     * @return primeiro caracter encontrado
+     */
     public static char firstChar(Stream stream) {        
         char[] caracteres = new char[0];
         while (stream.hasNext()) {           
