@@ -24,7 +24,7 @@
 		<beanutils.version>1.9.2</beanutils.version>
 		<c3p0.version>0.9.2.1</c3p0.version>
 		<guava.version>18.0</guava.version>
-		<h2.version>1.4.181</h2.version>
+		<h2.version>2.0.206</h2.version>
 		<hibernate.version>4.3.8.Final</hibernate.version>
 		<jsf.version>2.2.12</jsf.version>
 		<junit.version>4.12</junit.version>
